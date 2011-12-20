@@ -1,3 +1,5 @@
+var Timecop = require('../timecop').Timecop;
+
 describe('Timecop.MockDate', function() {
 
   var now, date;

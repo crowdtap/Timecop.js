@@ -1,7 +1,7 @@
 beforeEach(function() {
   this.addMatchers({
     toHaveFunction: function(methodName) {
-      return jQuery.isFunction(this.actual[methodName]);
+      return typeof this.actual[methodName] === 'function';
     },
 
     toBeCloseInTimeTo: function(otherDate, delta) {
