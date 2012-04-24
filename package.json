@@ -4,9 +4,12 @@
   "url"           : "http://github.com/jamesarosen/Timecop.js",
   "keywords"      : ["util", "testing", "server", "client", "browser"],
   "author"        : "James A. Rosen <james@zendesk.com>",
-  "contributors"  : [],
-  "dependencies"  : [],
-  "lib"           : ".",
-  "main"          : "timecop.js",
-  "version"       : "0.0.4"
+  "contributors"  : [
+    "Mike Swift <theycallmeswift@gmail.com>"
+  ],
+  "dependencies"  : { },
+  "devDependencies": {
+    "jasmine-node": "~1.0.13"
+  },
+  "version"       : "0.0.5"
 }

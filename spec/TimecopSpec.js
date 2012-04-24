@@ -1,3 +1,5 @@
+var Timecop = require('../timecop').Timecop;
+
 describe('Timecop', function() {
 
   beforeEach(function() {
@@ -110,14 +112,15 @@ describe('Timecop', function() {
       });
 
       it('should stop time', function() {
-        var self = this;
-        var date1 = new Date();
-        setTimeout(function() {
-          var date2 = new Date();
-          expect(date2).toBeTheSameTimeAs(date1);
-          self.timePassed = true;
-        }, 300);
-        waitsFor(function() { return self.timePassed; }, 'some time to have passed', 500);
+        runs(function() {
+          this.originalDate = new Date();
+        });
+        process.nextTick(function() {
+          runs(function(){
+            expect(this.originalDate).toBeTheSameTimeAs(new Date());
+            expect(new Date()).toBeTheSameTimeAs(new Date(2008, 6, 4, 14, 30, 15, 450));
+          });
+        });
       });
     });
 
